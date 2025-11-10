@@ -1,0 +1,29 @@
+pipeline{
+  agent any
+  tool{
+      jdk "jdk21"
+  }
+
+  stages{
+      stage('Checkout'){
+          steps{
+              git branch: 'main', url: "https://github.com/1ms24mc087/jenkins"
+          }
+      }
+
+      stage('Build'){
+          steps{
+              echo "Building..."
+              sh "javac Hello.java"
+          }
+      }
+
+      stage('Testing'){
+          steps{
+              echo "Testing..."
+              sh "java Hello"
+              
+          }
+      }
+  }
+}
