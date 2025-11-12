@@ -2,12 +2,21 @@ pipeline{
   agent any
 
   stages{
+    stage('Checkout'){
+      steps{
+        git branch:'main',url:"https://github.com/1ms24mc087/jenkins"
+      }
+    }
     stage('Build'){
-      echo "Developing numbers from 1-10"
+      steps{
+        echo "Developing numbers from 1-10"
+      } 
     }
     
     stage('Executing file'){
-      sh "python3 numbers.py"
+      steps{
+        sh "python3 numbers.py"
+      } 
     }
   }
 }
