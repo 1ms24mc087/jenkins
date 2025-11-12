@@ -1,0 +1,27 @@
+pipeline{
+  agent any
+  
+  tools jdk "jdk17"
+
+  stages{
+    stage('Checkout')
+    {
+      steps{
+        git branch: 'main', url:"https:github.com/1ms24mc087/jenkins"
+      }    
+    }
+    stage('Testing')
+    {
+      steps{
+        echo "Compiling numbers.java file"
+        sh "javac numbers.java"
+      }
+    }
+    stage('Execution'){
+      steps{
+        echo "Executing numbers.java file"
+        sh "java numbers.java"
+      }
+    }
+  }
+}
