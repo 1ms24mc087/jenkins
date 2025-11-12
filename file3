@@ -1,0 +1,13 @@
+pipeline{
+  agent any
+
+  stages{
+    stage('Build'){
+      echo "Developing numbers from 1-10"
+    }
+    
+    stage('Executing file'){
+      sh "python3 numbers.py"
+    }
+  }
+}
