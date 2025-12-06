@@ -1,9 +1,6 @@
 pipeline{
   agent any
   
-  tools{ 
-    jdk "jdk21"
-  }
   stages{
     stage('Checkout')
     {
@@ -11,17 +8,10 @@ pipeline{
         git branch: 'main', url:"https://github.com/1ms24mc087/jenkins"
       }    
     }
-    stage('Testing')
-    {
-      steps{
-        echo "Compiling numbers.java file"
-        sh "javac numbers.java"
-      }
-    }
     stage('Execution'){
       steps{
-        echo "Executing numbers.java file"
-        sh "java numbers.java"
+        echo "Executing python file"
+        sh "python3 ex.py"
       }
     }
   }
