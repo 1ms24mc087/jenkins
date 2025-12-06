@@ -4,7 +4,7 @@ class numbers
     {
       int i=1;
       System.out.println("Printing numbers from 1-10");
-      for(i=1;i<=10;i++)
+      for(i=1;i<=20;i++)
         {
           System.out.println(i);
         }
