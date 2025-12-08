@@ -1,0 +1,22 @@
+pipeline{
+  agent any
+
+  triggers{
+    pollSCM('* * * * *')
+  }
+
+  stages{
+    stage('Checkout')
+    {
+      steps{
+        git branch: 'main', url:"https://github.com/1ms24mc087/jenkins"
+      }    
+    }
+    stage('Execution'){
+      steps{
+        echo "Executing python file"
+        sh "python3 numbers.py"
+      }
+    }
+  }
+}
