@@ -11,7 +11,7 @@ pipeline{
     stage('Execution'){
       steps{
         echo "Executing python file"
-        sh "python3 Numbers.py"
+        sh "python3 numbers.py"
       }
     }
   }
